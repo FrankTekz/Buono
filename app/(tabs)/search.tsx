@@ -16,7 +16,7 @@ export default function search(){
             <View style={styles.searchView} >
             <TextInput 
                 placeholder='search'
-                onChangeText={ newText => setText(newText)} 
+                onChangeText={newText => setText(newText)} 
                 placeholderTextColor='black' 
                 style={styles.searchBar} 
                 defaultValue={text}
@@ -78,7 +78,6 @@ export default function search(){
                 </TouchableOpacity>
                 //where card component ends
                     )}
-                    //Setting the number of column
                     numColumns={2}
                 />
                 </SafeAreaView>

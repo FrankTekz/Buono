@@ -80,7 +80,7 @@ function FilterModal(){
                     />
                 </View>
             </View>
-            <View style={{margin: 30, alignItems: "center"}} >
+            <View style={{margin: 10, marginBottom: 15 ,alignItems: "center"}} >
                 <Text style={{fontSize: 20, fontFamily: 'KohinoorTelugu-Regular'}}>{selectedCalories}</Text>
                 <Slider
                     containerStyle={{width: 310}}
@@ -96,7 +96,7 @@ function FilterModal(){
                 />
                 <Text style={{fontFamily: 'KohinoorTelugu-Regular'}} >Calories</Text>
             </View>
-            <View style={{margin: 30, alignItems: "center"}}>
+            <View style={{margin: 10, alignItems: "center"}}>
             <Text style={{fontSize: 20, fontFamily: 'KohinoorTelugu-Regular'}}>{selectedMinutes}</Text>
                 <Slider
                     containerStyle={{width: 310}}

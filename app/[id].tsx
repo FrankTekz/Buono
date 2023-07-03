@@ -14,22 +14,22 @@ function RecipeDetailPage(){
     const thisRecipe = recipeData.find((recipe) => recipe.id == id)
 
     const ingredientAmounts = thisRecipe.nutrition.ingredients.map((ingredient) => (
-        <Text style={{marginLeft: 15,marginRight: 20, marginTop: 10, marginBottom: 10, fontFamily: 'KohinoorTelugu-Regular', fontSize: 15,}}>{fractionAmounts(ingredient.amount)} {abbreviatedUnits(ingredient.unit)}</Text>
+        <Text key={ingredient.id} style={{marginLeft: 15,marginRight: 20, marginTop: 10, marginBottom: 10, fontFamily: 'KohinoorTelugu-Regular', fontSize: 15,}}>{fractionAmounts(ingredient.amount)} {abbreviatedUnits(ingredient.unit)}</Text>
     ))
 
     const ingredientNames = thisRecipe.nutrition.ingredients.map((ingredient) => (
-        <Text style={{marginLeft: 10,marginRight: 20, marginTop: 10, marginBottom: 10, fontFamily: 'KohinoorTelugu-Regular', fontSize: 15}}>{ingredient.name}</Text>
+        <Text key={ingredient.name} style={{marginLeft: 10,marginRight: 20, marginTop: 10, marginBottom: 10, fontFamily: 'KohinoorTelugu-Regular', fontSize: 15}}>{ingredient.name}</Text>
     ))
 
     const recipeInstructions = thisRecipe.analyzedInstructions[0].steps.map((recipe) => (
-        <View style={{flexDirection: "row", padding: 10, marginTop: 5, alignItems: "center"}} >
+        <View key={recipe.number} style={{flexDirection: "row", padding: 10, marginTop: 5, alignItems: "center"}} >
             <Text style={{fontFamily: 'KohinoorTelugu-Regular', fontSize: 15, marginRight: 30, marginLeft: 15}}>{recipe.number}</Text>
             <Text style={{fontFamily: 'KohinoorTelugu-Regular', fontSize: 15, width: 300}}>{recipe.step}</Text>
         </View> 
     ))
 
     return(
-        <View style={{flex: 1}} >
+        <View style={{flex: 1}}>
         <ScrollView style={styles.recipeView}>
             <Image source={{uri: thisRecipe.image}} style={{height: 200 , resizeMode: "stretch"}}/>
             <Text style={styles.title}>{thisRecipe.title} </Text>

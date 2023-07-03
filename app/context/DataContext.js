@@ -97,7 +97,12 @@ function DataContextProvider(props){
         if (selectedMinutes != 0 && activeFilters.length > 0){
             filteredRecipes = filteredRecipes.filter((recipe) => Number(recipe.readyInMinutes) <= Number(selectedMinutes))
         }
-        
+
+        if (selectedCalories > 0 && selectedMinutes > 0){
+            filteredRecipes = recipeData.filter((recipe) => Number(recipe.nutrition.nutrients[0].amount.toString().split('.')[0]) <= Number(selectedCalories))
+            filteredRecipes = filteredRecipes.filter((recipe) => Number(recipe.readyInMinutes) <= Number(selectedMinutes))
+        }
+
         setDisplayedData(removeDuplicates([...filteredRecipes]))
       }
 
@@ -109,7 +114,7 @@ function DataContextProvider(props){
         } else {
             null
         }
-      }, [filters, recipeData, selectedCalories, activeFilters])
+      }, [filters, recipeData, selectedCalories, activeFilters, selectedMinutes])
 
     const abbreviatedUnits = (unit) => {
         if (unit === "milliliters") {

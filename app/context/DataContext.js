@@ -20,8 +20,6 @@ function DataContextProvider(props){
         setRecipeData(testData)
     }
 
-    // console.log(displayedData)
-
     //sets state for the data that is actually displayed (copy of initial data)
     useEffect(() => {
             setDisplayedData(recipeData)
@@ -32,15 +30,13 @@ function DataContextProvider(props){
         getRecipeData()
     }
 
-    // console.log(activeFilters)
-
     //removes any duplicates within data
     function removeDuplicates(arr) {
         return arr.filter((item,
             index) => arr.indexOf(item) === index);
     }
 
-    // filter logic for checkboxes
+    // filter logic
       function filterData(filters){
         const {vegan, vegetarian, dairyFree, glutenFree, lowFodmap} = filters; 
         let tempProducts = [...recipeData];
@@ -101,9 +97,7 @@ function DataContextProvider(props){
         if (selectedMinutes != 0 && activeFilters.length > 0){
             filteredRecipes = filteredRecipes.filter((recipe) => Number(recipe.readyInMinutes) <= Number(selectedMinutes))
         }
-
-        console.log(filteredRecipes)
-
+        
         setDisplayedData(removeDuplicates([...filteredRecipes]))
       }
 

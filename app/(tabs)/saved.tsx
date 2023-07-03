@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { DataContext } from '../context/DataContext';
 import { RecipeContext } from '../context/RecipeContext';
 
 export default function about(){
@@ -62,7 +61,6 @@ export default function about(){
                 </TouchableOpacity>
                 //where card component ends
                     )}
-                    //Setting the number of column
                     numColumns={2}
                 />
         </View>

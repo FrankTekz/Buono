@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, ScrollView, Pressable, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView, Pressable} from "react-native";
 
 import React, {useState} from "react";
 import { Link, useSearchParams } from "expo-router";

@@ -1,8 +1,7 @@
-import { Link, useRouter } from 'expo-router';
 import * as React from 'react';
 import { View, Text, StyleSheet, Pressable, FlatList, Image, SafeAreaView, TouchableOpacity} from 'react-native';
 import { TextInput } from 'react-native';
-import { useContext, useEffect } from 'react';
+import { useContext} from 'react';
 import { DataContext } from '../context/DataContext';
 import { RecipeContext } from '../context/RecipeContext';
 import { FilterContext } from '../context/FilterContext';
@@ -11,14 +10,6 @@ export default function search(){
     const {text, setText, handleSearch, displayedData, recipeData, setDisplayedData} = useContext(DataContext);
     const {activeFilters, activeSliders} = useContext(FilterContext)
     const {openRecipe} = useContext(RecipeContext)
-
-    // seems like i've fixed the logic to never be empty
-    // continued to add more sliders to the filterModal
-    // figure out what you wanna do with the 3rd tab (or if you even want it)
-    // look for inspiration in other apps
-    // dont forget, this is just the first version you're going to release. You can revise after
-    // you got this gang!
-
 
     return (
         <SafeAreaView style={{flex: 1, justifyContent: 'center',}}>

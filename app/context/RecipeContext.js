@@ -13,7 +13,6 @@ function RecipeContextProvider(props){
 
     function addRecipe(recipe){
         setSavedRecipes(previousList => [...previousList, recipe])
-        console.log(savedRecipes, 'SAVED')
     }
 
     function removeFromList(id) {

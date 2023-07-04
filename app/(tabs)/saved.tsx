@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { useContext } from 'react';
 import { RecipeContext } from '../context/RecipeContext';
 
 export default function about(){
-    const {openRecipe, savedRecipes} = React.useContext(RecipeContext)
+    const {openRecipe, savedRecipes} = useContext(RecipeContext)
 
     return(
         <View>
@@ -12,7 +13,12 @@ export default function about(){
                         Saved Recipes
                     </Text>
             </View>
-            <FlatList
+            {savedRecipes.length == 0 ? 
+            <View style={{justifyContent: 'center', alignItems: 'center', height: '85%'}} >
+                <Text style={{fontSize: 30, color: 'grey', fontFamily: 'KohinoorTelugu-Regular'}} >no recipes saved</Text>
+            </View>
+             : 
+                <FlatList
                 data={savedRecipes}
                 maxToRenderPerBatch={6}
                 removeClippedSubviews={true}
@@ -63,6 +69,8 @@ export default function about(){
                     )}
                     numColumns={2}
                 />
+            }
+            
         </View>
     )
 

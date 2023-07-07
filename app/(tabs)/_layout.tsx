@@ -53,7 +53,7 @@ export default function (){
                 }, 
                 tabBarIcon: ({focused}) => {
                     return(
-                        focused === true ? <Image style={{height: 20, width: 20}} source={require("food-rn/assets/icons/calendar-filled.png")}/>
+                        focused === true ? <Image style={{height: 22, width: 22}} source={require("food-rn/assets/icons/calendar-filled.png")}/>
                         : <Image style={{height: 18, width: 18}} source={require("food-rn/assets/icons/calendar.png")}/>
                     )
                 },

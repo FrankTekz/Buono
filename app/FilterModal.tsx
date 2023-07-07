@@ -6,34 +6,9 @@ import { FilterContext } from "./context/FilterContext";
 
 
 function FilterModal(){
-    const {filters, setFilters, setActiveFilters, selectedCalories, setSelectedCalories, selectedMinutes, setSelectedMinutes, activeSliders, setActiveSliders} = useContext(FilterContext)
+    const {filters, setFilters, selectedCalories, selectedMinutes, handleChangeCalories, handleChangeMinutes} = useContext(FilterContext)
 
-      function handleChangeCalories(value){
-        setSelectedCalories(value)
-      }
-
-      function handleChangeMinutes(value){
-        setSelectedMinutes(value)
-      }
       
-      useEffect(() => {
-        let filterEntries = Object.entries(filters)
-        setActiveFilters(filterEntries.filter((filter) => filter.includes(true)))
-      }, [filters])
-
-      useEffect(() => {
-        if (selectedCalories > 0){
-            setActiveSliders(prevState => ({...prevState, caloriesActive: true }))
-        } else {
-            setActiveSliders(prevState => ({...prevState, caloriesActive: false }))
-        }
-
-        if (selectedMinutes > 0){
-            setActiveSliders(prevState => ({...prevState, minutesActive: true }))
-        } else {
-            setActiveSliders(prevState => ({...prevState, minutesActive: false }))
-        }
-      }, [selectedMinutes, selectedCalories])
 
 
     return (

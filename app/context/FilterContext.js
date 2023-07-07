@@ -13,12 +13,39 @@ function FilterContextProvider(props) {
     })
     const [activeFilters, setActiveFilters] = useState([])
     const [activeSliders, setActiveSliders] = useState({caloriesActive: false, minutesActive: false})
+
+    function handleChangeCalories(value){
+        setSelectedCalories(value)
+      }
+
+      function handleChangeMinutes(value){
+        setSelectedMinutes(value)
+      }
+      
+      useEffect(() => {
+        let filterEntries = Object.entries(filters)
+        setActiveFilters(filterEntries.filter((filter) => filter.includes(true)))
+      }, [filters])
+
+      useEffect(() => {
+        if (selectedCalories > 0){
+            setActiveSliders(prevState => ({...prevState, caloriesActive: true }))
+        } else {
+            setActiveSliders(prevState => ({...prevState, caloriesActive: false }))
+        }
+
+        if (selectedMinutes > 0){
+            setActiveSliders(prevState => ({...prevState, minutesActive: true }))
+        } else {
+            setActiveSliders(prevState => ({...prevState, minutesActive: false }))
+        }
+      }, [selectedMinutes, selectedCalories])
     
     
     
 
     return (
-        <FilterContext.Provider value={{filters, setFilters, activeFilters, setActiveFilters, selectedCalories, setSelectedCalories,  selectedMinutes, setSelectedMinutes, activeSliders, setActiveSliders}} >
+        <FilterContext.Provider value={{filters, setFilters, activeFilters, setActiveFilters, selectedCalories, setSelectedCalories,  selectedMinutes, setSelectedMinutes, activeSliders, setActiveSliders, handleChangeCalories, handleChangeMinutes}} >
             {props.children}
         </FilterContext.Provider>
     );

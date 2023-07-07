@@ -41,7 +41,7 @@ export default function (){
                 },
             }} 
             />
-            <Tabs.Screen name="settings" options={{ 
+            <Tabs.Screen name="plan" options={{ 
                 headerShown: false, 
                 tabBarStyle: {
                     backgroundColor: '#FF862A',
@@ -53,8 +53,8 @@ export default function (){
                 }, 
                 tabBarIcon: ({focused}) => {
                     return(
-                        focused === true ? <Image style={{height: 20, width: 20}} source={require("food-rn/assets/icons/settings-filled.png")}/>
-                        : <Image style={{height: 17, width: 17}} source={require("food-rn/assets/icons/settings.png")}/>
+                        focused === true ? <Image style={{height: 20, width: 20}} source={require("food-rn/assets/icons/calendar-filled.png")}/>
+                        : <Image style={{height: 18, width: 18}} source={require("food-rn/assets/icons/calendar.png")}/>
                     )
                 },
             }}  />

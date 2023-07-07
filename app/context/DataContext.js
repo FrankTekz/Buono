@@ -10,6 +10,7 @@ function DataContextProvider(props){
     const [text, setText] = useState('')
     const {filters, selectedCalories, activeFilters, selectedMinutes,} = useContext(FilterContext)
 
+    //function that holds the api call
     async function getRecipeData() {
         const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${text}&apiKey=061eea07da374088a2a88a00827312ab&addRecipeNutrition=true&number=10&type=true&addRecipeInformation=true`);
         if(!response.ok){
@@ -25,6 +26,7 @@ function DataContextProvider(props){
             setDisplayedData(recipeData)
     }, [recipeData])
 
+    //api call function is within the onPress function for the search bar
     function handleSearch(){
         Keyboard.dismiss()
         getRecipeData()
@@ -106,8 +108,6 @@ function DataContextProvider(props){
         setDisplayedData(removeDuplicates([...filteredRecipes]))
       }
 
-
-
       useEffect(()=> {
         if (Object.values(filters).includes(true) || selectedCalories > 0 || selectedMinutes > 0){
             filterData(filters)
@@ -116,6 +116,7 @@ function DataContextProvider(props){
         }
       }, [filters, recipeData, selectedCalories, activeFilters, selectedMinutes])
 
+      //unit and fraction data was not adaptable to cooking terminology, so I created functions to clean them up
     const abbreviatedUnits = (unit) => {
         if (unit === "milliliters") {
             return ('ml')

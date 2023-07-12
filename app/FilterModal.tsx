@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet} from "react-native";
-import React, {useContext, useEffect} from "react";
+import React, {useContext} from "react";
 import {Slider} from '@miblanchard/react-native-slider'
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { FilterContext } from "./context/FilterContext";

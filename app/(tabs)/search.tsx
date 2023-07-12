@@ -104,7 +104,8 @@ const styles = StyleSheet.create({
         fontFamily: 'KohinoorTelugu-Regular',
         fontSize: 16,
         marginTop: 5,
-        marginLeft: 5
+        marginLeft: 5,
+        marginRight: 5
     },
     searchContainer: {
         flex: 1,

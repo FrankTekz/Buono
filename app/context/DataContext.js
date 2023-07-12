@@ -12,7 +12,7 @@ function DataContextProvider(props){
 
     //function that holds the api call
     async function getRecipeData() {
-        const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${text}&apiKey=061eea07da374088a2a88a00827312ab&addRecipeNutrition=true&number=10&type=true&addRecipeInformation=true`);
+        const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${text}&apiKey=061eea07da374088a2a88a00827312ab&addRecipeNutrition=true&number=20&type=true&addRecipeInformation=true`);
         if(!response.ok){
             throw new Error('cannot fetch api')
         }

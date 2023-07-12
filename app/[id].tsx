@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Image, ScrollView, Pressable} from "react-native";
 
-import React, {useState} from "react";
+import React from "react";
 import { Link, useSearchParams } from "expo-router";
 import { DataContext } from "./context/DataContext";
 import { RecipeContext } from "./context/RecipeContext";

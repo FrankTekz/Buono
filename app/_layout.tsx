@@ -17,6 +17,7 @@ export default function StackLayout(){
         router.push('FilterModal')
     }
 
+
     return(
         <FilterContextProvider>
         <RecipeContextProvider>

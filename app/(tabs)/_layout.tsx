@@ -41,23 +41,6 @@ export default function (){
                 },
             }} 
             />
-            <Tabs.Screen name="plan" options={{ 
-                headerShown: false, 
-                tabBarStyle: {
-                    backgroundColor: '#FF862A',
-                },
-                tabBarLabelStyle: {
-                    color: 'whitesmoke',
-                    fontWeight: "bold",
-                    fontSize: 12
-                }, 
-                tabBarIcon: ({focused}) => {
-                    return(
-                        focused === true ? <Image style={{height: 22, width: 22}} source={require("food-rn/assets/icons/calendar-filled.png")}/>
-                        : <Image style={{height: 18, width: 18}} source={require("food-rn/assets/icons/calendar.png")}/>
-                    )
-                },
-            }}  />
         </Tabs>
     )
 }

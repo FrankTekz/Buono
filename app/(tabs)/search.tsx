@@ -43,7 +43,7 @@ export default function search(){
                                 style={{justifyContent: 'center', alignItems: 'center', height: 130, resizeMode: 'cover'}} 
                                 source={{ uri: item.image }} 
                                 />
-                            <Text style={styles.title} >{item.title}</Text>
+                            <Text style={styles.title} >{item.title.length >= 35 ? item.title.slice(0, 35) + '...' : item.title }</Text>
                         </View>
                         <View style={{flexDirection: 'row', marginLeft: 5, justifyContent: 'space-between'}} >
                             <View style={{flexDirection: 'row'}} >

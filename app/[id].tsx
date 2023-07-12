@@ -18,7 +18,7 @@ function RecipeDetailPage(){
     ))
 
     const ingredientNames = thisRecipe.nutrition.ingredients.map((ingredient) => (
-        <Text key={ingredient.name} style={{marginLeft: 10,marginRight: 20, marginTop: 10, marginBottom: 10, fontFamily: 'KohinoorTelugu-Regular', fontSize: 15}}>{ingredient.name}</Text>
+        <Text key={ingredient.id} style={{marginLeft: 10,marginRight: 20, marginTop: 10, marginBottom: 10, fontFamily: 'KohinoorTelugu-Regular', fontSize: 15}}>{ingredient.name}</Text>
     ))
 
     const recipeInstructions = thisRecipe.analyzedInstructions[0].steps.map((recipe) => (
